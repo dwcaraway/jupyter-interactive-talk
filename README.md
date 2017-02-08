@@ -11,35 +11,31 @@ pip install -r requirements.txt
 ```
 
 ## Install NBExtensions Javascript and CSS
-We use the [Jupyter Notebook Extensions](https://github.com/ipython-contrib/jupyter_contrib_nbextensions) to create a table of contents. The extensions are installed in the step above but we'll need to copy over the javascript and css libraries into your user directory and edits your configuration using the below command:
+The [Jupyter Notebook Extensions](https://github.com/ipython-contrib/jupyter_contrib_nbextensions) add a lot of neat capabilities to Jupyter Notebook. The extensions are installed in the step above but we'll need to copy over the javascript and css libraries into your user directory and edits your configuration using the below command:
 ```
 jupyter contrib nbextension install --user
 ```
 
-There are lots of great extensions for Jupyter in this library. Let's enable the Table of Contents extension:
-```
-jupyter nbextension enable toc2/main
-```
-
-## Install and configure NBPresent
-We use NBPresent to run our Jupyter notebook as a slide show
-```
-jupyter nbextension install nbpresent --py --overwrite
-jupyter nbextension enable nbpresent --py
-jupyter serverextension enable nbpresent --py
-```
+You should now be able to edit your extensions at the Jupyter notebook home or by running the 'jupyter nbextension' command
 
 ## Configure ipywidgets
 ```
 jupyter nbextension enable --py --sys-prefix widgetsnbextension
 ```
 
-## Virtual Environment Kernal
-If you are using a virtualenv, see [notes for creating a kernal](https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/)
+## Virtual Environment Kernel
+If you are using a virtualenv (highly recommended), you'll need to create a kernel specification to launch notebooks with it inside the Jupyter Notebook.
+
+
+  mkdir -p ~/kernelspecs/vistalk
+  jupyter kernelspec install ~/kernelspecs/vistalk --user
+
+
+Afterwards, you'll need to relaunch any running jupyter notebook servers. Your kernel containing all the packings installed within your virtualenv are now available.
 
 ## Run the notebook
 ```
 jupyter notebook
 ```
 
-
+When the jupyter server launches, a browser window will open to the server. The URL to access the server will be displayed in the terminal along with a token (if using default config) required to discourage CSRF attacks.
