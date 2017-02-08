@@ -19,6 +19,8 @@ jupyter contrib nbextension install --user
 You should now be able to edit your extensions at the Jupyter notebook home or by running the 'jupyter nbextension' command
 
 ## Configure ipywidgets
+The IPyWidget provides a common widgets interface for interactivity in a Jupyter notebook. It's used for some of our examples and is required for the qgrid data viewer. To enable it, run:
+
 ```
 jupyter nbextension enable --py --sys-prefix widgetsnbextension
 ```
@@ -39,3 +41,8 @@ jupyter notebook
 ```
 
 When the jupyter server launches, a browser window will open to the server. The URL to access the server will be displayed in the terminal along with a token (if using default config) required to discourage CSRF attacks.
+
+## Animations
+To run the animations and interactive plots for bokeh, you'll want to run a bokeh server concurrently in the background. You can do so by invoking
+
+  bokeh serve
