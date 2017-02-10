@@ -44,5 +44,6 @@ When the jupyter server launches, a browser window will open to the server. The 
 
 ## Animations
 To run the animations and interactive plots for bokeh, you'll want to run a bokeh server concurrently in the background. You can do so by invoking
-
-  bokeh serve
+```
+bokeh serve
+```
